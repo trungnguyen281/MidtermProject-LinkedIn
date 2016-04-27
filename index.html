@@ -117,7 +117,23 @@
 					<div class="header">
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Project</h3>
-					</div>				
+					</div>
+					<div class="content">
+						<ul>
+							<li ng-repeat="project in projects">
+								<h4><a href="">{{project.projectname}}</a></h4>
+								<dd>
+									<dl class="technical" ng-repeat="item in project.knowledge">
+										<h5><a href="">{{item}}</a></h5>
+									</dl>
+								</dd> <br/>
+								<div style="clear: both">
+									<span class="time">{{project.time}}</span><br/>
+								<span class="detail">{{project.detail}}</span>
+								</div>
+							</li>
+						</ul>
+					</div>						
 				</div>
 				<div id="skills-container" class="container">
 					<div class="header">
@@ -129,8 +145,8 @@
 							<h5>Top skills</h5>
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in skills.topskills">
-									<div class="point">{{skill.point}}</div>
-									<div class="skill-name">{{skill.name}}</div>
+									<div class="point"><a href="">{{skill.point}}</a></div>
+									<div class="skill-name"><a href="">{{skill.name}}</a></div>
 									<div class="hr-line">
 										<hr>
 									</div>
@@ -142,8 +158,8 @@
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in skills.anotherskills">
 									<div class="skill">
-										<div class="point">{{skill.point}}</div>
-										<div class="skill-name">{{skill.name}}</div>
+										<div class="point"><a href="">{{skill.point}}</a></div>
+										<div class="skill-name"><a href="">{{skill.name}}</a></div>
 									</div>
 								</dl>
 							</dd>
@@ -156,6 +172,15 @@
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Education</h3>
 					</div>				
+					<div class="content">
+						<ul>
+							<li ng-repeat="education in educations">
+								<h4><a href="">{{education.shoolname}}</a></h4>
+								<h5><a href="">{{education.major}}</a></h5>
+								<span class="time">{{education.time}}</span>
+							</li>
+						</ul>
+					</div>	
 				</div>
 			</div>
 		</div>

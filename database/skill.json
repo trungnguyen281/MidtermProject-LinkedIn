@@ -3,64 +3,84 @@
 		"topskills":
 		[
 			{
-				"point": "95",
+				"point": "99",
+				"name": "Business strategy"
+			},
+			{
+				"point": "99",
 				"name": "Leadership"
 			},
 			{
-				"point": "90",
-				"name": "Business strategy"
+				"point": "99",
+				"name": "Strategy"
+			},
+			{
+				"point": "99",
+				"name": "Product Marketing"
+			},
+			{
+				"point": "96",
+				"name": "Excutive Management"
+			},
+			{
+				"point": "87",
+				"name": "Product Development"
+			},
+			{
+				"point": "73",
+				"name": "LinkedIn"
 			}
 		],
 
 		"anotherskills":
 		[
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "65",
+				"name": "Social Media"
 			},
 			{
-				"point": "90",
-				"name": "Business strategy"
+				"point": "49",
+				"name": "User Experience"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "35",
+				"name": "Corporate Development"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "31",
+				"name": "Non-profits"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "28",
+				"name": "Analytics"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "28",
+				"name": "Mergers & Acquisitions"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "13",
+				"name": "Team Leadership"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "12",
+				"name": "Thought Leadership"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "10",
+				"name": "Business Operations"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "10",
+				"name": "Leadership Development"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "6",
+				"name": "Mobile Applications"
 			},
 			{
-				"point": "95",
-				"name": "Leadership"
+				"point": "5",
+				"name": "Motivation"
 			}
 		]
 	}

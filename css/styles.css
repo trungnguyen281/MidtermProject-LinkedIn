@@ -291,28 +291,34 @@ ul {
 	vertical-align: middle;
 }
 
-#experience-container h4 {
+.content h4 {
 	padding: 0px;
 	margin: 3px 0;
 	font-weight: bold;
 }
 
-#experience-container h5 {
+.content h5 {
 	padding: 0px;
 	margin: 3px 0;
 }
 
-#experience-container h4 a {
+.content h4 a {
 	color: black;
 }
 
-#experience-container h5 a {
+.content h5 a {
 	color: #434649;
 }
 
-#experience-container a:hover {
+.content a:hover {
 	color: #006fa6;
 	text-decoration: none;
+}
+
+.technical {
+	float: left;
+	margin: 0 7px 0 0;
+	padding: 0;
 }
 
 .time, .locate {
@@ -320,11 +326,13 @@ ul {
 	font-size: 13px;
 }
 
+.list-top-skills {
+	margin-top: 10px;
+}
+
 .point {
 	padding: 5px 7px;
-	background: #0073b2;
-	color: white;
-	font-weight: bold;
+	background: #1ba8e5;
 	margin: 0;
 	display: inline-block;
 	float: left;
@@ -338,6 +346,7 @@ ul {
 	margin-right: 10px;
 	margin-bottom: 7px;
 }
+
 
 .top-skills .skill-name {
 	float: left;
@@ -362,4 +371,23 @@ ul {
 
 .skill {
 	float: left;
+}
+
+.point a {
+	color: white;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+.point:hover {
+	background: #0073b2;
+}
+
+.skill-name a {
+	color: #333;
+	text-decoration: none;
+}
+
+.skill-name a:hover {
+	color: #1ba8e5;
 }

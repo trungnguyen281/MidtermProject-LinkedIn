@@ -1,0 +1,25 @@
+[
+	{
+		"projectname": "Alano Website",
+		"knowledge":
+		[
+			"PHP",
+			"Symfony",
+			"HTML",
+			"CSS"
+		],
+		"time": "November 2015 - December 2015",
+		"detail": "Website about news, give us news which is hot in almost famous website. Beside that, user can post news"
+	},
+	{
+		"projectname": "My Paint",
+		"knowledge":
+		[
+			"C#",
+			"graphic",
+			"WPF"
+		],
+		"time": "November 2015 - December 2015",
+		"detail": "An application likes paint of Microsoft"
+	}	
+]
