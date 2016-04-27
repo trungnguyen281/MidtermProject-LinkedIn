@@ -1,25 +1,61 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="LinkedInApp">
 <head>
-	<title>LinkedIn - Nguyen Duc Trung</title>
+	<title>Trung Nguyen Duc | LinkedIn</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body>
+<body ng-controller="LinkedIn">
 	<div id="top-card">
 		<div class="profile">
-			<div class="profile-img">
-				
-			</div>
+			<img class="profile-img" src="img/profile.jpg" alt="profile-picture">
 			<div class="profile-overview">
-				<h2><strong>Trung Nguyen</strong></h2>
-				<h2>Student at University of Science</h2>
-				<span>Ho Chi Minh City, Viet Nam</span>
-
+				<div class="basic-info">
+					<div class="name-container">
+						<span class="fullname">Trung Nguyen Duc</span>
+					</div>
+					<div class="headline-container">
+						<span class="headline">CEO at LinkedIn</span>
+					</div>
+					<div class="demographics">
+						<a href="#">San Francisco Bay Area</a><p> | </p><a href="#">Internet</a>
+					</div>
+				</div>
+				<table class="overview">
+					<tbody>
+						<tr class="overview-current">
+							<th>Current</th>
+							<td>LinkedIn, Intuit, DonorsChoose</td>
+						</tr>
+						<tr class="overview-past">
+							<th>Previous</th>
+							<td>Malaria No More, Accel Partners, Greylock</td>
+						</tr>
+						<tr class="overview-education">
+							<th>Education</th>
+							<td>University of Pennsylvania - The Wharton School</td>
+						</tr>
+					</tbody>
+				</table>
+				<div class="profile-aux">
+					<div class="member-connections">
+						<strong>4,041,547</strong>
+						followers
+					</div>
+					<div class="profile-action">
+						<button class="btn-follow">Follow</button>
+						<button class="btn-follow">&#9660</button>
+						<div class="connect">
+							<p>Know Jeff?</p>
+							<a href="#"><strong>Connect</strong></a>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="profile-extra">
-			
+			<a href="https://vn.linkedin.com/in/trung-nguyen-241763ba" target="_blank">https://vn.linkedin.com/in/trung-nguyen-241763ba</a>
+			<button class="btn-contact-info">Contact Info</button>
 		</div>
 	</div>
 	<div id="main">
@@ -29,6 +65,32 @@
 		<div id="main-left">
 			<div class="card post">
 				<h2>Post</h2>
+				<div class="influencer-post">
+					<h4 class="influencer-header">Publish by Jeff</h4>
+					<span class="see-more-action">
+						<a href="#">See more</a> &#9658
+					</span>
+					<div class="post-list">
+						<ul>
+							<li class="post-with-image first-post">
+								<a href=""><img src="img/profile.jpg"></a>
+								<div class="post-title"><a href="#">My Interview with Oprah</a></div>
+								<p class="publish-at">October 15, 2015</p>
+							</li>
+							<li class="post-with-image">
+								<a href=""><img src="img/profile.jpg"></a>
+								<div class="post-title"><a href="#">Always Be Learning: LinkedIn to Acquire lynda.com</a></div>
+								<p class="publish-at">October 15, 2015</p>
+							</li>
+							<li class="post-with-image last-post">
+								<a href=""><img src="img/profile.jpg"></a>
+								<div class="post-title"><a href="#">How LinkedIn is Helping Power the President's...</a></div>
+								<p class="publish-at">October 15, 2015</p>
+							</li>
+						</ul>
+						<div style="clear: both"></div>
+					</div>
+				</div>
 			</div>
 			<div class="card background">
 				<h2>Background</h2>
