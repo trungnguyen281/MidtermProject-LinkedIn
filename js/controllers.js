@@ -16,5 +16,9 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
 	$http.get('database/experience.json').success(function(data) {
 		$scope.experiences = data;
 	});
+
+	$http.get('database/skill.json').success(function(data) {
+		$scope.skills = data[0];
+	});
 });
 

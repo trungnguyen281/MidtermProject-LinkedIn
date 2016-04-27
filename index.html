@@ -105,9 +105,9 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="experience in experiences">
-								<h4>{{experience.job}}</h4>
-								<h5>{{experience.companyname}}</h5>
-								<span class="time">{{experience.time}}</span> | <span class="locate">{{experience.locate}}</span>
+								<h4><a href="">{{experience.job}}</a></h4>
+								<h5><a href="">{{experience.companyname}}</a></h5>
+								<span class="time">{{experience.time}}</span> | <span class="locate">{{experience.locate}}</span><br/>
 								<span class="detail">{{experience.detail}}</span>
 							</li>
 						</ul>
@@ -123,6 +123,32 @@
 					<div class="header">
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Skills</h3>
+					</div>
+					<div class="content">
+						<div class="top-skills">
+							<h5>Top skills</h5>
+							<dd class="list-top-skills">
+								<dl ng-repeat="skill in skills.topskills">
+									<div class="point">{{skill.point}}</div>
+									<div class="skill-name">{{skill.name}}</div>
+									<div class="hr-line">
+										<hr>
+									</div>
+								</dl>
+							</dd>
+						</div>
+						<div class="another-skills">
+							<h5>{{profile.firstname}} also knows about...</h5>
+							<dd class="list-top-skills">
+								<dl ng-repeat="skill in skills.anotherskills">
+									<div class="skill">
+										<div class="point">{{skill.point}}</div>
+										<div class="skill-name">{{skill.name}}</div>
+									</div>
+								</dl>
+							</dd>
+						</div>
+						<div style="clear: both; margin-bottom: 20px"></div>
 					</div>				
 				</div>
 				<div id="education-container" class="container">

@@ -204,7 +204,7 @@ body {
 	margin: 0;
 }
 
-.post-list ul {
+ul {
 	list-style-type: none;
 	padding: 0;
 }
@@ -260,7 +260,6 @@ body {
 	padding-top: 10px;
 	padding-bottom: 10px;
 	margin-top: 0px;
-	/*!  */
 	font-size: 16px;
 	font-weight: normal;
 	line-height: 18px;
@@ -284,4 +283,83 @@ body {
 
 .content {
 	border-bottom: 1px solid #e8e8e8;
+}
+
+.content li {
+	margin-bottom: 20px;
+	clear: both;
+	vertical-align: middle;
+}
+
+#experience-container h4 {
+	padding: 0px;
+	margin: 3px 0;
+	font-weight: bold;
+}
+
+#experience-container h5 {
+	padding: 0px;
+	margin: 3px 0;
+}
+
+#experience-container h4 a {
+	color: black;
+}
+
+#experience-container h5 a {
+	color: #434649;
+}
+
+#experience-container a:hover {
+	color: #006fa6;
+	text-decoration: none;
+}
+
+.time, .locate {
+	color: #66696a;
+	font-size: 13px;
+}
+
+.point {
+	padding: 5px 7px;
+	background: #0073b2;
+	color: white;
+	font-weight: bold;
+	margin: 0;
+	display: inline-block;
+	float: left;
+}
+
+.skill-name {
+	padding: 5px 7px;
+	background: #f0f0f0;
+	margin: 0;
+	display: inline-block;
+	margin-right: 10px;
+	margin-bottom: 7px;
+}
+
+.top-skills .skill-name {
+	float: left;
+}
+
+.hr-line {
+	height: 30px;
+	margin: 0;
+	overflow: hidden;
+	display: block;
+}
+
+
+.another-skills {
+	margin-top: 50px;
+	clear: both;
+}
+
+.top-skills dl {
+	margin-bottom: 7px;
+}
+
+.skill {
+	float: left;
 }
