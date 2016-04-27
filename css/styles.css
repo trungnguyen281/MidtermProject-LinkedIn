@@ -125,11 +125,25 @@ body {
 
 .btn-follow {
 	float: left;
+	background-color: #287bbc;
+	border: none;
+	color: white;
+	padding: 7px 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 0;
+	font-weight: bold;
+	border-color: #1b5480;
+}
+
+.btn-follow:hover {
+	background-color: #1b5480;
 }
 
 .connect {
 	float: left;
-	font-size: 12px;
+	font-size: 14px;
 	line-height: 14px;
 	color: #333;
 	font-weight: normal;
@@ -137,11 +151,10 @@ body {
 }
 
 .connect p {
-	margin: 0;
+	margin: 0 0 4px 0;
 }
 
 .profile-extra {
-	padding: 8px 10px;
 }
 
 .profile-extra a {
@@ -156,9 +169,25 @@ body {
 	text-decoration: none;
 }
 
+.profile-link {
+	height: 100%;
+	padding: 8px 8px;
+	float: left;
+}
 .btn-contact-info {
 	float: right;
+	border: none;
+	font-size: 12px;
+	background-color: #ccc;
+	margin: 0;
+	height: 100%;
+	padding: 0 20px;
 }
+
+.btn-contact-info:hover {
+	color: #0073b2;
+}
+
 .card {
   background: #fff;
   box-shadow: 0 1px 1px rgba(0,0,0,0.15),
@@ -273,6 +302,12 @@ ul {
 
 .header {
 	vertical-align: middle;
+}
+
+.logo-company {
+	float: right;
+	width: auto;
+	height: 50px;
 }
 
 .icon {

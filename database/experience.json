@@ -2,6 +2,7 @@
 	{
 		"job": "CEO",
 		"companyname": "LinkedIn",
+		"logocompany": "img/experience1.jpg",
 		"time": "December 2008 – Present (7 years 5 months)",
 		"locate": "",
 		"detail": "Connecting the world's professionals to make them more productive and successful. Since joining the company in December 2008, LinkedIn has expanded its global platform to 23 languages and more than 30 offices around the world, grown its membership base from 33M to more than 347M, and increased its revenue from $78M to over $2.2B in 2014. "
@@ -9,6 +10,7 @@
 	{
 		"job": "Member, Board of Directors",
 		"companyname": "Intuit",
+		"logocompany": "img/experience2.jpg",
 		"time": "April 2012 – Present (4 years 1 month)",
 		"locate": "Mountain View, CA",
 		"detail": "With revenue of $4B+ and approximately 8,000 employees, Intuit is a leading provider of innovative business and financial management solutions for small and medium-sized businesses, consumers, accounting professionals and financial institutions."
@@ -16,6 +18,7 @@
 	{
 		"job": "Member, Board of Directors",
 		"companyname": "DonorsChoose",
+		"logocompany": "img/experience3.jpg",
 		"time": "2007 – Present (9 years)",
 		"locate": "",
 		"detail": "One of the web's leading philanthropic marketplaces, designed to enable teachers to upload classroom projects in need of funding, and for anyone to select and fund a project."

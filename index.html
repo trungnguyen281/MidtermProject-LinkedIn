@@ -54,7 +54,9 @@
 			</div>
 		</div>
 		<div class="profile-extra">
-			<a href="{{profile.profilelink}}" target="_blank">{{profile.profilelink}}</a>
+			<div class="profile-link">
+				<a href="{{profile.profilelink}}" target="_blank">{{profile.profilelink}}</a>
+			</div>
 			<button class="btn-contact-info">Contact Info</button>
 		</div>
 	</div>
@@ -105,6 +107,7 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="experience in experiences">
+								<img class="logo-company" src="{{experience.logocompany}}">
 								<h4><a href="">{{experience.job}}</a></h4>
 								<h5><a href="">{{experience.companyname}}</a></h5>
 								<span class="time">{{experience.time}}</span> | <span class="locate">{{experience.locate}}</span><br/>
@@ -175,6 +178,7 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="education in educations">
+								<img class="logo-company" src="{{education.logoschool}}">
 								<h4><a href="">{{education.shoolname}}</a></h4>
 								<h5><a href="">{{education.major}}</a></h5>
 								<span class="time">{{education.time}}</span>
