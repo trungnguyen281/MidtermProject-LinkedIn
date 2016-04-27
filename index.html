@@ -5,48 +5,48 @@
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
 </head>
-<body ng-controller="LinkedIn">
+<body ng-controller="LinkedInCtrl">
 	<div id="top-card">
 		<div class="profile">
-			<img class="profile-img" src="img/profile.jpg" alt="profile-picture">
+			<img class="profile-img" src="{{profile.avatar}}" alt="profile-picture">
 			<div class="profile-overview">
 				<div class="basic-info">
 					<div class="name-container">
-						<span class="fullname">Trung Nguyen Duc</span>
+						<span class="fullname">{{profile.firstname}} {{profile.lastname}}</span>
 					</div>
 					<div class="headline-container">
-						<span class="headline">CEO at LinkedIn</span>
+						<span class="headline">{{profile.headline}}</span>
 					</div>
 					<div class="demographics">
-						<a href="#">San Francisco Bay Area</a><p> | </p><a href="#">Internet</a>
+						<a href="#">{{profile.city}}</a><p> | </p><a href="#">{{profile.country}}</a>
 					</div>
 				</div>
 				<table class="overview">
 					<tbody>
 						<tr class="overview-current">
 							<th>Current</th>
-							<td>LinkedIn, Intuit, DonorsChoose</td>
+							<td>{{profile.current}}</td>
 						</tr>
 						<tr class="overview-past">
 							<th>Previous</th>
-							<td>Malaria No More, Accel Partners, Greylock</td>
+							<td>{{profile.past}}</td>
 						</tr>
 						<tr class="overview-education">
 							<th>Education</th>
-							<td>University of Pennsylvania - The Wharton School</td>
+							<td>{{profile.education}}</td>
 						</tr>
 					</tbody>
 				</table>
 				<div class="profile-aux">
 					<div class="member-connections">
-						<strong>4,041,547</strong>
+						<strong>{{profile.followers}}</strong>
 						followers
 					</div>
 					<div class="profile-action">
 						<button class="btn-follow">Follow</button>
 						<button class="btn-follow">&#9660</button>
 						<div class="connect">
-							<p>Know Jeff?</p>
+							<p>Know {{profile.firstname}}?</p>
 							<a href="#"><strong>Connect</strong></a>
 						</div>
 					</div>
@@ -54,7 +54,7 @@
 			</div>
 		</div>
 		<div class="profile-extra">
-			<a href="https://vn.linkedin.com/in/trung-nguyen-241763ba" target="_blank">https://vn.linkedin.com/in/trung-nguyen-241763ba</a>
+			<a href="{{profile.profilelink}}" target="_blank">{{profile.profilelink}}</a>
 			<button class="btn-contact-info">Contact Info</button>
 		</div>
 	</div>
@@ -94,8 +94,33 @@
 			</div>
 			<div class="card background">
 				<h2>Background</h2>
+				<div id="summary-container" class="container">
+					<h3>Summary</h3>
+					<div class="summary-content">
+						<p>Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.
+
+Currently CEO at LinkedIn, the web's largest and most powerful network of professionals.
+
+Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
+
+Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
+
+Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance</p>
+					</div>
+				</div>
+				<div id="experience-container" class="container">
+					
+				</div>
+				<div id="project-container" class="container">
+					
+				</div>
+				<div id="skills-container" class="container">
+					
+				</div>
 			</div>
 		</div>
 	</div>
+	<script src="js/angular.min.js" type="text/javascript"></script>
+	<script src="js/controllers.js" type="text/javascript"></script>
 </body>
 </html>
