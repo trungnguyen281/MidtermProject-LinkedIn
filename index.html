@@ -66,26 +66,16 @@
 			<div class="card post">
 				<h2>Post</h2>
 				<div class="influencer-post">
-					<h4 class="influencer-header">Publish by Jeff</h4>
+					<h4 class="influencer-header">Publish by {{profile.firstname}}</h4>
 					<span class="see-more-action">
 						<a href="#">See more</a> &#9658
 					</span>
 					<div class="post-list">
 						<ul>
-							<li class="post-with-image first-post">
-								<a href=""><img src="img/profile.jpg"></a>
-								<div class="post-title"><a href="#">My Interview with Oprah</a></div>
-								<p class="publish-at">October 15, 2015</p>
-							</li>
-							<li class="post-with-image">
-								<a href=""><img src="img/profile.jpg"></a>
-								<div class="post-title"><a href="#">Always Be Learning: LinkedIn to Acquire lynda.com</a></div>
-								<p class="publish-at">October 15, 2015</p>
-							</li>
-							<li class="post-with-image last-post">
-								<a href=""><img src="img/profile.jpg"></a>
-								<div class="post-title"><a href="#">How LinkedIn is Helping Power the President's...</a></div>
-								<p class="publish-at">October 15, 2015</p>
+							<li ng-repeat="post in posts" class="post-with-image">
+								<a href=""><img src="{{post.imgsrc}}"></a>
+								<div class="post-title"><a href="#">{{post.title}}</a></div>
+								<p class="publish-at">{{post.publishat}}</p>
 							</li>
 						</ul>
 						<div style="clear: both"></div>
@@ -95,27 +85,51 @@
 			<div class="card background">
 				<h2>Background</h2>
 				<div id="summary-container" class="container">
-					<h3>Summary</h3>
-					<div class="summary-content">
-						<p>Internet executive with over 20 years of experience, including general management of mid to large size organizations, corporate development, product development, business operations, and strategy.
-
-Currently CEO at LinkedIn, the web's largest and most powerful network of professionals.
-
-Prior to LinkedIn, was an Executive in Residence at Accel Partners and Greylock Partners. Primarily focused on advising the leadership teams of the firm's existing consumer technology portfolio companies while also working closely with the firm’s partners to evaluate new investment opportunities.
-
-Previously served in key leadership roles at Yahoo! for over seven years, most recently as the Executive Vice President of Yahoo!'s Network Division managing Yahoo's consumer web product portfolio, including Yahoo's Front Page, Mail, Search, and Media products.
-
-Specialties: general management, corporate development, product development, business operations, strategy, product marketing, non-profit governance</p>
+					<div class="header">
+						<span class="glyphicon glyphicon-envelope icon"></span>
+						<h3>Summary</h3>
+					</div>				
+					<div class="content">
+						<dd>
+							<dl ng-repeat="paragraph in summary.content">
+								<p>{{paragraph}}</p>
+							</dl>
+						</dd>
 					</div>
 				</div>
 				<div id="experience-container" class="container">
-					
+					<div class="header">
+						<span class="glyphicon glyphicon-envelope icon"></span>
+						<h3>Experience</h3>
+					</div>
+					<div class="content">
+						<ul>
+							<li ng-repeat="experience in experiences">
+								<h4>{{experience.job}}</h4>
+								<h5>{{experience.companyname}}</h5>
+								<span class="time">{{experience.time}}</span> | <span class="locate">{{experience.locate}}</span>
+								<span class="detail">{{experience.detail}}</span>
+							</li>
+						</ul>
+					</div>				
 				</div>
 				<div id="project-container" class="container">
-					
+					<div class="header">
+						<span class="glyphicon glyphicon-envelope icon"></span>
+						<h3>Project</h3>
+					</div>				
 				</div>
 				<div id="skills-container" class="container">
-					
+					<div class="header">
+						<span class="glyphicon glyphicon-envelope icon"></span>
+						<h3>Skills</h3>
+					</div>				
+				</div>
+				<div id="education-container" class="container">
+					<div class="header">
+						<span class="glyphicon glyphicon-envelope icon"></span>
+						<h3>Education</h3>
+					</div>				
 				</div>
 			</div>
 		</div>

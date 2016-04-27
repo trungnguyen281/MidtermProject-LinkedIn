@@ -211,17 +211,14 @@ body {
 
 .post-with-image {
 	float: left;
-	width: 195px;
+	width: 203px;
 	min-height: 135px;
 	position: relative;
+	padding: 0 5px;
 }
 .post-with-image img {
 	width: 192px;
 	height: 135px;
-}
-
-.first-post {
-	margin-right: 12px;
 }
 
 .last-post {
@@ -272,4 +269,19 @@ body {
 
 .container p {
 	font-size: 13px;
+	clear: both;
+}
+
+.header {
+	vertical-align: middle;
+}
+
+.icon {
+	font-size: 40px;
+	float: left;
+	margin-right: 10px;
+}
+
+.content {
+	border-bottom: 1px solid #e8e8e8;
 }
