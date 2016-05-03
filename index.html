@@ -4,6 +4,7 @@
 	<title>Trung Nguyen Duc | LinkedIn</title>
 	<meta charset="utf-8">
 	<link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="css/xeditable.css" rel="stylesheet">
 </head>
 <body ng-controller="LinkedInCtrl">
 	<div id="top-card">
@@ -12,28 +13,31 @@
 			<div class="profile-overview">
 				<div class="basic-info">
 					<div class="name-container">
-						<span class="fullname">{{profile.firstname}} {{profile.lastname}}</span>
+						<span class="fullname" editable-text="profile.firstname">{{profile.firstname}}</span><span class="fullname" editable-text="profile.lastname"> {{profile.lastname}}</span>
 					</div>
 					<div class="headline-container">
-						<span class="headline">{{profile.headline}}</span>
+						<span class="headline" editable-text="profile.headline">{{profile.headline}}</span>
 					</div>
 					<div class="demographics">
-						<a href="#">{{profile.city}}</a><p> | </p><a href="#">{{profile.country}}</a>
+						<a href="#" editable-text="profile.city">{{profile.city}}</a><p> | </p><a href="#" editable-text="profile.country">{{profile.country}}</a>
 					</div>
 				</div>
 				<table class="overview">
 					<tbody>
 						<tr class="overview-current">
 							<th>Current</th>
-							<td>{{profile.current}}</td>
+							<td>{{experiences[0].companyname}}</td>
+							<td><a href="#experience-container"><img class="edit-icon" src="img/edit-icon.png"></a></td>
 						</tr>
 						<tr class="overview-past">
 							<th>Previous</th>
-							<td>{{profile.past}}</td>
+							<td>{{experiences[1].companyname}}</td>
+							<td><a href="#experience-container"><img class="edit-icon" src="img/edit-icon.png"></a></td>
 						</tr>
 						<tr class="overview-education">
 							<th>Education</th>
-							<td>{{profile.education}}</td>
+							<td>{{educations[0].schoolname}}</td>
+							<td><a href="#education-container"><img class="edit-icon" src="img/edit-icon.png"></a></td>
 						</tr>
 					</tbody>
 				</table>
@@ -55,7 +59,7 @@
 		</div>
 		<div class="profile-extra">
 			<div class="profile-link">
-				<a href="{{profile.profilelink}}" target="_blank">{{profile.profilelink}}</a>
+				<a href="index1.html" target="_blank">{{profile.profilelink}}</a>
 			</div>
 			<button class="btn-contact-info">Contact Info</button>
 		</div>
@@ -90,13 +94,15 @@
 					<div class="header">
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Summary</h3>
-					</div>				
+						<button class="btn btn-default add-content" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+					</div>
+					<div style="clear: both;"></div>		
 					<div class="content">
-						<dd>
-							<dl ng-repeat="paragraph in summary.content">
-								<p>{{paragraph}}</p>
-							</dl>
-						</dd>
+						<div class="summary-content">
+							<span editable-textarea="summary.content" e-form="textBtnForm" e-rows="10" e-cols="75">
+								{{ summary.content || 'empty' }}
+							</span>
+						</div>	
 					</div>
 				</div>
 				<div id="experience-container" class="container">
@@ -179,7 +185,7 @@
 						<ul>
 							<li ng-repeat="education in educations">
 								<img class="logo-company" src="{{education.logoschool}}">
-								<h4><a href="">{{education.shoolname}}</a></h4>
+								<h4><a href="">{{education.schoolname}}</a></h4>
 								<h5><a href="">{{education.major}}</a></h5>
 								<span class="time">{{education.time}}</span>
 							</li>
@@ -191,5 +197,6 @@
 	</div>
 	<script src="js/angular.min.js" type="text/javascript"></script>
 	<script src="js/controllers.js" type="text/javascript"></script>
+	<script src="js/xeditable.js"></script>
 </body>
 </html>

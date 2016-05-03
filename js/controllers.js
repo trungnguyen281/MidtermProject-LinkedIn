@@ -1,4 +1,8 @@
-var LinkedInApp = angular.module('LinkedInApp', []);
+var LinkedInApp = angular.module('LinkedInApp', ["xeditable"]);
+
+LinkedInApp.run(function(editableOptions) {
+  editableOptions.theme = 'bs3'; // bootstrap3 theme. Can be also 'bs2', 'default'
+});
 
 LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
 	$http.get('database/profile.json').success(function(data) {
