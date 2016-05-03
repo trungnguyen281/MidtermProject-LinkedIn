@@ -94,7 +94,7 @@
 					<div class="header">
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Summary</h3>
-						<button class="btn btn-default add-content" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
+						<button class="btn btn-default edit-button" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
 					</div>
 					<div style="clear: both;"></div>		
 					<div class="content">
@@ -114,10 +114,37 @@
 						<ul>
 							<li ng-repeat="experience in experiences">
 								<img class="logo-company" src="{{experience.logocompany}}">
-								<h4><a href="">{{experience.job}}</a></h4>
-								<h5><a href="">{{experience.companyname}}</a></h5>
-								<span class="time">{{experience.time}}</span> | <span class="locate">{{experience.locate}}</span><br/>
-								<span class="detail">{{experience.detail}}</span>
+								<form editable-form name="editableForm">
+									<div>
+										<h4 editable-text="experience.job"><a href="">{{experience.job}}</a></h4>
+										<!-- button to show form -->
+								      	<button type="button" class="btn btn-default edit-button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+								        Edit
+								      	</button>
+									</div>
+									<div>
+										<h5 editable-text="experience.companyname"><a href="">{{experience.companyname}}</a></h5>
+									</div>
+									<div>
+										<span editable-text="experience.time" class="time">{{experience.time}}</span> | <span editable-text="experience.locate" class="locate">{{experience.locate}}</span><br/>
+									</div>
+									<div>
+										<span editable-textarea="experience.detail" e-rows="5" e-cols="75" class="detail">
+											{{experience.detail}}
+										</span>
+									</div>
+									<div class="buttons">
+								      	<!-- buttons to submit / cancel form -->
+								      	<span ng-show="editableForm.$visible">
+								        	<button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+								          	Save
+								        	</button>
+								        	<button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+								          	Cancel
+								        	</button>
+								      	</span>
+							    	</div>
+								</form>
 							</li>
 						</ul>
 					</div>				
@@ -130,16 +157,42 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="project in projects">
-								<h4><a href="">{{project.projectname}}</a></h4>
-								<dd>
-									<dl class="technical" ng-repeat="item in project.knowledge">
-										<h5><a href="">{{item}}</a></h5>
-									</dl>
-								</dd> <br/>
-								<div style="clear: both">
-									<span class="time">{{project.time}}</span><br/>
-								<span class="detail">{{project.detail}}</span>
-								</div>
+								<form editable-form name="editableForm">
+									<div>
+										<h4 editable-text="project.projectname"><a href="">{{project.projectname}}</a></h4>
+										<!-- button to show form -->
+								      	<button type="button" class="btn btn-default edit-button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+								        Edit
+								      	</button>
+									</div>
+									<div>
+										<dd>
+											<dl class="technical" ng-repeat="item in project.knowledge">
+												<h5 editable-text="item"><a href="">{{item}}</a></h5>
+											</dl>
+										</dd> <br/>
+										<div style="clear: both">
+									</div>
+									<div>
+										<span editable-text="project.time" class="time">{{project.time}}</span>
+									</div>
+									<div>
+										<span editable-textarea="project.detail" e-rows="5" e-cols="75" class="detail">
+											{{project.detail}}
+										</span>
+									</div>
+									<div class="buttons">
+								      	<!-- buttons to submit / cancel form -->
+								      	<span ng-show="editableForm.$visible">
+								        	<button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+								          	Save
+								        	</button>
+								        	<button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+								          	Cancel
+								        	</button>
+								      	</span>
+							    	</div>
+								</form>
 							</li>
 						</ul>
 					</div>						
@@ -185,9 +238,32 @@
 						<ul>
 							<li ng-repeat="education in educations">
 								<img class="logo-company" src="{{education.logoschool}}">
-								<h4><a href="">{{education.schoolname}}</a></h4>
-								<h5><a href="">{{education.major}}</a></h5>
-								<span class="time">{{education.time}}</span>
+								<form editable-form name="editableForm">
+									<div>
+										<h4 editable-text="education.schoolname"><a href="">{{education.schoolname}}</a></h4>
+										<!-- button to show form -->
+								      	<button type="button" class="btn btn-default edit-button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
+								        Edit
+								      	</button>
+									</div>
+									<div>
+										<h5 editable-text="education.major"><a href="">{{education.major}}</a></h5>
+									</div>
+									<div>
+										<span editable-text="education.time" class="time">{{education.time}}</span>
+									</div>
+									<div class="buttons">
+								      	<!-- buttons to submit / cancel form -->
+								      	<span ng-show="editableForm.$visible">
+								        	<button type="submit" class="btn btn-primary" ng-disabled="editableForm.$waiting">
+								          	Save
+								        	</button>
+								        	<button type="button" class="btn btn-default" ng-disabled="editableForm.$waiting" ng-click="editableForm.$cancel()">
+								          	Cancel
+								        	</button>
+								      	</span>
+							    	</div>
+								</form>
 							</li>
 						</ul>
 					</div>	

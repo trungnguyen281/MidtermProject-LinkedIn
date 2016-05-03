@@ -334,6 +334,7 @@ ul {
 	padding: 0px;
 	margin: 3px 0;
 	font-weight: bold;
+	display: inline;
 }
 
 .content h5 {
@@ -450,7 +451,7 @@ ul {
 	visibility: hidden;
 }
 
-.profile-overview:hover .edit-icon {
+tr:hover .edit-icon {
 	visibility: visible;
 }
 
@@ -458,23 +459,30 @@ ul {
 	outline: none;
 }
 
-.add-content {
-	float: right;
+.edit-button {
 	font-weight: bold;
-	margin-top: 7px;
 	padding: 2px 10px;
 	background: #F2F2F2;
 	color: #666;
-	font-size: 12px;
+	font-size: 11px;
    	display: inline-block;
    	visibility: hidden;
 }
 
-.add-content:hover{
+.edit-button:hover {
 	background: #00a0dc;
 	color: #fff;
 }
 
-#summary-container:hover .add-content {
+#summary-container .edit-button {
+	float: right;
+	margin-top: 7px;
+}
+
+#summary-container:hover .edit-button {
+	visibility: visible;
+}
+
+li:hover .edit-button {
 	visibility: visible;
 }
