@@ -23,7 +23,6 @@
 
 /* keep buttons on the same line */
 .editable-wrap .editable-input {
-  display: inline-block;
 }
 
 .editable-buttons {

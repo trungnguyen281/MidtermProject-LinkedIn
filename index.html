@@ -113,8 +113,8 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="experience in experiences">
-								<img class="logo-company" src="{{experience.logocompany}}">
 								<form editable-form name="editableForm">
+									<img editable-text="experience.logocompany" class="logo-company" src="{{experience.logocompany}}">
 									<div>
 										<h4 editable-text="experience.job"><a href="">{{experience.job}}</a></h4>
 										<!-- button to show form -->
@@ -146,6 +146,38 @@
 							    	</div>
 								</form>
 							</li>
+							<form editable-form name="addExperienceForm" ng-submit="addExperience()">
+								<button type="button" class="btn btn-default" ng-click="addExperienceForm.$show()" ng-show="!addExperienceForm.$visible">
+								    Add
+								</button>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Job's name/position..." ng-model="job" ng-show="addExperienceForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Company's name..." ng-model="companyname" ng-show="addExperienceForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Link company's logo..." ng-model="logocompany" ng-show="addExperienceForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Time..." ng-model="time" ng-show="addExperienceForm.$visible"> 
+									<input type="text" placeholder="Address..." ng-model="locate" ng-show="addExperienceForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Detail..." ng-model="detail" ng-show="addExperienceForm.$visible">
+								</div>
+								<div class="buttons">
+								    <!-- buttons to submit / cancel form -->
+								    <span ng-show="addExperienceForm.$visible">
+									    <button type="submit" class="btn btn-primary" ng-disabled="addExperienceForm.$waiting" ng-click="addExperienceForm.$cancel()">
+									    Save
+									    </button>
+									    <button type="button" class="btn btn-default" ng-disabled="addExperienceForm.$waiting" ng-click="addExperienceForm.$cancel()">
+									    Cancel
+									    </button>
+								    </span>
+							    </div>
+							</form>
 						</ul>
 					</div>				
 				</div>
@@ -194,6 +226,36 @@
 							    	</div>
 								</form>
 							</li>
+							<form editable-form name="addProjectForm" ng-submit="addProject()">
+								<button type="button" class="btn btn-default" ng-click="addProjectForm.$show()" ng-show="!addProjectForm.$visible">
+								    Add
+								</button>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Your project's name..." ng-model="projectname" ng-show="addProjectForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="knowledge 1..." ng-model="knowledge1" ng-show="addProjectForm.$visible">
+									<input type="text" placeholder="knowledge 2..." ng-model="knowledge2" ng-show="addProjectForm.$visible">
+									<input type="text" placeholder="knowledge 3..." ng-model="knowledge3" ng-show="addProjectForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Time..." ng-model="time" ng-show="addProjectForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input type="text" placeholder="Detail..." ng-model="detail" ng-show="addProjectForm.$visible">
+								</div>
+								<div class="buttons">
+								    <!-- buttons to submit / cancel form -->
+								    <span ng-show="addProjectForm.$visible">
+									    <button type="submit" class="btn btn-primary" ng-disabled="addProjectForm.$waiting" ng-click="addProjectForm.$cancel()">
+									    Save
+									    </button>
+									    <button type="button" class="btn btn-default" ng-disabled="addProjectForm.$waiting" ng-click="addProjectForm.$cancel()">
+									    Cancel
+									    </button>
+								    </span>
+							    </div>
+							</form>
 						</ul>
 					</div>						
 				</div>
@@ -220,17 +282,32 @@
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in otherskills">
 									<div class="skill">
-										<div editable-text="skill.point" class="point"><a href="">{{skill.point}}</a></div>
-										<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
+										<div class="point"><a href="">{{skill.point || '0'}}</a></div>
+										<div class="skill-name"><a href="">{{skill.name || 'empty'}}</a></div>
 									</div>
 								</dl>
 							</dd>
-							<div>
-								<input class="txt-skill" type="text" ng-model="skillname">
-								<button class="btn btn-default edit-button" ng-click="addSkill()">Add skill</button>
-							</div>
 						</div>
 						<div style="clear: both; margin-bottom: 20px">
+							<form editable-form name="addSkillForm" ng-submit="addSkill()">
+								<button type="button" class="btn btn-default" ng-click="addSkillForm.$show()" ng-show="!addSkillForm.$visible">
+								    Add
+								</button>
+								<div style="margin-bottom: 5px;">
+									<input class="txt-skill" placeholder="Skill name is..." type="text" ng-model="skillname" ng-show="addSkillForm.$visible">
+								</div>
+								<div class="buttons">
+								    <!-- buttons to submit / cancel form -->
+								    <span ng-show="addSkillForm.$visible">
+									    <button type="submit" class="btn btn-primary" ng-disabled="addSkillForm.$waiting" ng-click="addSkillForm.$cancel()">
+									    Save
+									    </button>
+									    <button type="button" class="btn btn-default" ng-disabled="addSkillForm.$waiting" ng-click="addSkillForm.$cancel()">
+									    Cancel
+									    </button>
+								    </span>
+							    </div>
+							</form>
 						</div>
 					</div>				
 				</div>
@@ -245,17 +322,17 @@
 								<img class="logo-company" src="{{education.logoschool}}">
 								<form editable-form name="editableForm">
 									<div>
-										<h4 editable-text="education.schoolname"><a href="">{{education.schoolname}}</a></h4>
+										<h4 editable-text="education.schoolname"><a href="">{{education.schoolname||'empty'}}</a></h4>
 										<!-- button to show form -->
 								      	<button type="button" class="btn btn-default edit-button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
 								        Edit
 								      	</button>
 									</div>
 									<div>
-										<h5 editable-text="education.major"><a href="">{{education.major}}</a></h5>
+										<h5 editable-text="education.major"><a href="">{{education.major || 'empty'}}</a></h5>
 									</div>
 									<div>
-										<span editable-text="education.time" class="time">{{education.time}}</span>
+										<span editable-text="education.time" class="time">{{education.time ||'empty'}}</span>
 									</div>
 									<div class="buttons">
 								      	<!-- buttons to submit / cancel form -->
@@ -270,6 +347,34 @@
 							    	</div>
 								</form>
 							</li>
+							<form editable-form name="addEducationForm" ng-submit="addEducation()">
+								<button type="button" class="btn btn-default" ng-click="addEducationForm.$show()" ng-show="!addEducationForm.$visible">
+								    Add
+								</button>
+								<div style="margin-bottom: 5px">
+									<input type="text" placeholder="School name..." ng-model="schoolname" ng-show="addEducationForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px">
+									<input type="text" placeholder="Link logo school..." ng-model="logoschool" ng-show="addEducationForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px">
+									<input type="text" placeholder="Your major is..." ng-model="major" ng-show="addEducationForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px">
+									<input type="text" placeholder="Time..." ng-model="time" ng-show="addEducationForm.$visible">
+								</div>
+								<div class="buttons">
+								      	<!-- buttons to submit / cancel form -->
+								      	<span ng-show="addEducationForm.$visible">
+								        	<button type="submit" class="btn btn-primary" ng-disabled="addEducationForm.$waiting" ng-click="addEducationForm.$cancel()">
+								          	Save
+								        	</button>
+								        	<button type="button" class="btn btn-default" ng-disabled="addEducationForm.$waiting" ng-click="addEducationForm.$cancel()">
+								          	Cancel
+								        	</button>
+								      	</span>
+							    	</div>
+							</form>
 						</ul>
 					</div>	
 				</div>

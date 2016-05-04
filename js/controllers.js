@@ -38,6 +38,28 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
 		$scope.educations = data;
 	});
 
+	$scope.addExperience = function() {
+   	 	$scope.inserted = {
+      		job: $scope.job,
+      		companyname: $scope.companyname,
+      		logocompany: $scope.logocompany,
+      		time: $scope.time,
+      		locate: $scope.locate,
+      		detail: $scope.detail
+    	};
+    	$scope.experiences.push($scope.inserted);
+  	};
+
+	$scope.addProject = function() {
+   	 	$scope.inserted = {
+      		projectname: $scope.projectname,
+      		knowledge: [$scope.knowledge1, $scope.knowledge2, $scope.knowledge3] ,
+      		time: $scope.time,
+      		detail: $scope.detail
+    	};
+    	$scope.projects.push($scope.inserted);
+  	};
+
   	$scope.addSkill = function() {
    	 	$scope.inserted = {
       		point: '0',
@@ -45,6 +67,16 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
     	};
     	$scope.otherskills.push($scope.inserted);
     	$scope.skillname = '';
+  	};
+
+  	$scope.addEducation = function() {
+   	 	$scope.inserted = {
+      		schoolname: $scope.schoolname,
+      		logoschool: $scope.logoschool,
+      		major: $scope.major,
+      		time: $scope.time
+    	};
+    	$scope.educations.push($scope.inserted);
   	};
 });
 
