@@ -206,7 +206,7 @@
 						<div class="top-skills">
 							<h5>Top skills</h5>
 							<dd class="list-top-skills">
-								<dl ng-repeat="skill in skills.topskills">
+								<dl ng-repeat="skill in topskills">
 									<div class="point"><a href="">{{skill.point}}</a></div>
 									<div class="skill-name"><a href="">{{skill.name}}</a></div>
 									<div class="hr-line">
@@ -215,18 +215,23 @@
 								</dl>
 							</dd>
 						</div>
-						<div class="another-skills">
+						<div class="other-skills">
 							<h5>{{profile.firstname}} also knows about...</h5>
 							<dd class="list-top-skills">
-								<dl ng-repeat="skill in skills.anotherskills">
+								<dl ng-repeat="skill in otherskills">
 									<div class="skill">
-										<div class="point"><a href="">{{skill.point}}</a></div>
-										<div class="skill-name"><a href="">{{skill.name}}</a></div>
+										<div editable-text="skill.point" class="point"><a href="">{{skill.point}}</a></div>
+										<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
 									</div>
 								</dl>
 							</dd>
+							<div>
+								<input class="txt-skill" type="text" ng-model="skillname">
+								<button class="btn btn-default edit-button" ng-click="addSkill()">Add skill</button>
+							</div>
 						</div>
-						<div style="clear: both; margin-bottom: 20px"></div>
+						<div style="clear: both; margin-bottom: 20px">
+						</div>
 					</div>				
 				</div>
 				<div id="education-container" class="container">

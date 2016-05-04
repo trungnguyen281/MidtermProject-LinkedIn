@@ -1,5 +1,4 @@
 @import url("bootstrap.min.css");
-@import url("https://netdna.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css");
 
 body {
   background: #e9e9e9;
@@ -380,6 +379,8 @@ ul {
 	margin: 0;
 	display: inline-block;
 	float: left;
+	min-width: 30px;
+	text-align: center;
 }
 
 .skill-name {
@@ -404,7 +405,7 @@ ul {
 }
 
 
-.another-skills {
+.other-skills {
 	margin-top: 50px;
 	clear: both;
 }
@@ -483,6 +484,19 @@ tr:hover .edit-icon {
 	visibility: visible;
 }
 
+#skills-container:hover .edit-button {
+	visibility: visible;
+}
+
 li:hover .edit-button {
+	visibility: visible;
+}
+
+.txt-skill {
+	visibility: hidden;
+	margin-top: 3px;
+}
+
+#skills-container:hover .txt-skill {
 	visibility: visible;
 }

@@ -1,87 +1,78 @@
 [
 	{
-		"topskills":
-		[
-			{
-				"point": "99",
-				"name": "Business strategy"
-			},
-			{
-				"point": "99",
-				"name": "Leadership"
-			},
-			{
-				"point": "99",
-				"name": "Strategy"
-			},
-			{
-				"point": "99",
-				"name": "Product Marketing"
-			},
-			{
-				"point": "96",
-				"name": "Excutive Management"
-			},
-			{
-				"point": "87",
-				"name": "Product Development"
-			},
-			{
-				"point": "73",
-				"name": "LinkedIn"
-			}
-		],
-
-		"anotherskills":
-		[
-			{
-				"point": "65",
-				"name": "Social Media"
-			},
-			{
-				"point": "49",
-				"name": "User Experience"
-			},
-			{
-				"point": "35",
-				"name": "Corporate Development"
-			},
-			{
-				"point": "31",
-				"name": "Non-profits"
-			},
-			{
-				"point": "28",
-				"name": "Analytics"
-			},
-			{
-				"point": "28",
-				"name": "Mergers & Acquisitions"
-			},
-			{
-				"point": "13",
-				"name": "Team Leadership"
-			},
-			{
-				"point": "12",
-				"name": "Thought Leadership"
-			},
-			{
-				"point": "10",
-				"name": "Business Operations"
-			},
-			{
-				"point": "10",
-				"name": "Leadership Development"
-			},
-			{
-				"point": "6",
-				"name": "Mobile Applications"
-			},
-			{
-				"point": "5",
-				"name": "Motivation"
-			}
-		]
+		"point": "99",
+		"name": "Business strategy"
+	},
+	{
+		"point": "6",
+		"name": "Mobile Applications"
+	},
+	{
+		"point": "99",
+		"name": "Leadership"
+	},
+	{
+		"point": "12",
+		"name": "Thought Leadership"
+	},
+	{
+		"point": "10",
+		"name": "Business Operations"
+	},
+	{
+		"point": "99",
+		"name": "Product Marketing"
+	},
+	{
+		"point": "10",
+		"name": "Leadership Development"
+	},
+	{
+		"point": "99",
+		"name": "Strategy"
+	},
+	{
+		"point": "96",
+		"name": "Excutive Management"
+	},
+	{
+		"point": "87",
+		"name": "Product Development"
+	},
+	{
+		"point": "73",
+		"name": "LinkedIn"
+	},
+	{
+		"point": "65",
+		"name": "Social Media"
+	},
+	{
+		"point": "49",
+		"name": "User Experience"
+	},
+	{
+		"point": "35",
+		"name": "Corporate Development"
+	},
+	{
+		"point": "31",
+		"name": "Non-profits"
+	},
+	{
+		"point": "28",
+		"name": "Analytics"
+	},
+	{
+		"point": "28",
+		"name": "Mergers & Acquisitions"
+	},
+	{
+		"point": "13",
+		"name": "Team Leadership"
+	},
+	{
+		"point": "5",
+		"name": "Motivation"
 	}
 ]

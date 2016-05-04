@@ -26,11 +26,25 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
 	});
 
 	$http.get('database/skill.json').success(function(data) {
-		$scope.skills = data[0];
+		data.sort(function(a, b) {
+ 		return parseFloat(b.point) - parseFloat(a.point);
+		});
+
+		$scope.topskills = data.slice(0,6);
+		$scope.otherskills = data.slice(6,data.length);
 	});
 
 	$http.get('database/education.json').success(function(data) {
 		$scope.educations = data;
 	});
+
+  	$scope.addSkill = function() {
+   	 	$scope.inserted = {
+      		point: '0',
+      		name: $scope.skillname
+    	};
+    	$scope.otherskills.push($scope.inserted);
+    	$scope.skillname = '';
+  	};
 });
 
