@@ -42,9 +42,10 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
       $scope.inserted = {
           content: $scope.summarydetail
       };
-      $scope.summarydetail = "";
 
       $scope.summary.push($scope.inserted);
+
+       $scope.summarydetail = "";
     };
 
   $scope.addExperience = function() {
@@ -52,37 +53,38 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
           job: $scope.job,
           companyname: $scope.companyname,
           logocompany: $scope.logocompany,
-          time: $scope.time,
+          time: $scope.experiencetime,
           locate: $scope.locate,
-          detail: $scope.detail
+          detail: $scope.experiencedetail
       };
+
+      $scope.experiences.push($scope.inserted);
 
       $scope.job = "";
       $scope.companyname = "";
       $scope.logocompany = "";
-      $scope.time = "";
+      $scope.experiencetime = "";
       $scope.locate = "";
-      $scope.detail = "";
-
-      $scope.experiences.push($scope.inserted);
+      $scope.experiencedetail = "";
     };
 
   $scope.addProject = function() {
       $scope.inserted = {
           projectname: $scope.projectname,
-          knowledge: [$scope.knowledge1, $scope.knowledge2, $scope.knowledge3] ,
-          time: $scope.time,
-          detail: $scope.detail
+          knowledge: [$scope.knowledge1, $scope.knowledge2, $scope.knowledge3],
+          time: $scope.projecttime,
+          detail: $scope.projectdetail
       };
 
-      scope.projectname = "";
+      $scope.projectname = "";
       $scope.knowledge1 = "";
       $scope.knowledge2 = "";
       $scope.knowledge3 = "";
-      $scope.time = "";
-      $scope.detail = "";
-      
+      $scope.projecttime = "";
+      $scope.projectdetail = "";
+
       $scope.projects.push($scope.inserted);
+    
     };
 
     $scope.addSkill = function() {
@@ -91,9 +93,9 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
           name: $scope.skillname
       };
 
-      $scope.skillname = "";
-
       $scope.otherskills.push($scope.inserted);
+
+      $scope.skillname = "";
     };
 
     $scope.addEducation = function() {
@@ -101,15 +103,15 @@ LinkedInApp.controller('LinkedInCtrl', function($scope, $http){
           schoolname: $scope.schoolname,
           logoschool: $scope.logoschool,
           major: $scope.major,
-          time: $scope.time
+          time: $scope.educationtime
       };
+      
+      $scope.educations.push($scope.inserted);
 
       $scope.schoolname = "";
-      scope.logoschool = "";
+      $scope.logoschool = "";
       $scope.major = "";
-      $scope.time = "";
-
-      $scope.educations.push($scope.inserted);
+      $scope.educationtime = "";
     };
 });
 

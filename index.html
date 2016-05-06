@@ -59,7 +59,7 @@
 		</div>
 		<div class="profile-extra">
 			<div class="profile-link">
-				<a href="index1.html" target="_blank">{{profile.profilelink}}</a>
+				<a href="" target="_blank">{{profile.profilelink}}</a>
 			</div>
 			<button class="btn-contact-info">Contact Info</button>
 		</div>
@@ -101,7 +101,7 @@
 							<ul>
 								<li ng-repeat="detail in summary">
 									<span editable-textarea="detail.content" e-rows="5" e-cols="75">
-									{{ detail.content }}
+									{{detail.content}}
 									</span>
 								</li>
 							</ul>
@@ -182,13 +182,11 @@
 									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Link company's logo..." ng-model="logocompany" ng-show="addExperienceForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Time..." ng-model="time" ng-show="addExperienceForm.$visible"> 
+									<input class="editable-input form-control ng-pristine ng-valid col-3" type="text" placeholder="Time..." ng-model="experiencetime" ng-show="addExperienceForm.$visible"> 
+									<input class="editable-input form-control ng-pristine ng-valid col-3" type="text" placeholder="Address..." ng-model="locate" ng-show="addExperienceForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Address..." ng-model="locate" ng-show="addExperienceForm.$visible">
-								</div>
-								<div style="margin-bottom: 5px;">
-									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Detail..." ng-model="detail" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Detail..." ng-model="experiencedetail" ng-show="addExperienceForm.$visible">
 								</div>
 								<div class="buttons">
 								    <!-- buttons to submit / cancel form -->
@@ -255,18 +253,18 @@
 								    Add
 								</button>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Your project's name..." ng-model="projectname" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Your project's name..." ng-model="projectname" ng-show="addProjectForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="knowledge 1..." ng-model="knowledge1" ng-show="addProjectForm.$visible">
-									<input type="text" placeholder="knowledge 2..." ng-model="knowledge2" ng-show="addProjectForm.$visible">
-									<input type="text" placeholder="knowledge 3..." ng-model="knowledge3" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid col-3" type="text" placeholder="knowledge 1..." ng-model="knowledge1" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid col-3" type="text" placeholder="knowledge 2..." ng-model="knowledge2" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid col-3" type="text" placeholder="knowledge 3..." ng-model="knowledge3" ng-show="addProjectForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Time..." ng-model="time" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Time..." ng-model="projecttime" ng-show="addProjectForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Detail..." ng-model="detail" ng-show="addProjectForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Detail..." ng-model="projectdetail" ng-show="addProjectForm.$visible">
 								</div>
 								<div class="buttons">
 								    <!-- buttons to submit / cancel form -->
@@ -294,7 +292,7 @@
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in topskills">
 									<div editable-number="skill.point" class="point"><a href="">{{skill.point}}</a></div>
-									<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
+									<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name || 'empty'}}</a></div>
 									<div class="hr-line">
 										<hr>
 									</div>
@@ -307,7 +305,7 @@
 								<dl ng-repeat="skill in otherskills">
 									<div class="skill">
 										<div editable-number="skill.point" class="point"><a href="">{{skill.point}}</a></div>
-										<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
+										<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name || 'empty'}}</a></div>
 									</div>
 								</dl>
 							</dd>
@@ -318,7 +316,7 @@
 								    Add
 								</button>
 								<div style="margin-bottom: 5px;">
-									<input class="txt-skill" placeholder="Skill name is..." type="text" ng-model="skillname" ng-show="addSkillForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid txt-skill" placeholder="Skill name is..." type="text" ng-model="skillname" ng-show="addSkillForm.$visible">
 								</div>
 								<div class="buttons">
 								    <!-- buttons to submit / cancel form -->
@@ -343,20 +341,20 @@
 					<div class="content">
 						<ul>
 							<li ng-repeat="education in educations">
-								<img class="logo-company" src="{{education.logoschool}}">
 								<form editable-form name="editableForm">
+									<img editable-text="education.logoschool" class="logo-company" src="{{education.logoschool}}">
 									<div>
-										<h4 editable-text="education.schoolname"><a href="">{{education.schoolname||'empty'}}</a></h4>
+										<h4 editable-text="education.schoolname"><a href="">{{education.schoolname}}</a></h4>
 										<!-- button to show form -->
 								      	<button type="button" class="btn btn-default edit-button" ng-click="editableForm.$show()" ng-show="!editableForm.$visible">
 								        Edit
 								      	</button>
 									</div>
 									<div>
-										<h5 editable-text="education.major"><a href="">{{education.major || 'empty'}}</a></h5>
+										<h5 editable-text="education.major"><a href="">{{education.major}}</a></h5>
 									</div>
 									<div>
-										<span editable-text="education.time" class="time">{{education.time ||'empty'}}</span>
+										<span editable-text="education.time" class="time">{{education.time}}</span>
 									</div>
 									<div class="buttons">
 								      	<!-- buttons to submit / cancel form -->
@@ -376,16 +374,16 @@
 								    Add
 								</button>
 								<div style="margin-bottom: 5px">
-									<input type="text" placeholder="School name..." ng-model="schoolname" ng-show="addEducationForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="School name..." ng-model="schoolname" ng-show="addEducationForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px">
-									<input type="text" placeholder="Link logo school..." ng-model="logoschool" ng-show="addEducationForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Link logo school..." ng-model="logoschool" ng-show="addEducationForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px">
-									<input type="text" placeholder="Your major is..." ng-model="major" ng-show="addEducationForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Your major is..." ng-model="major" ng-show="addEducationForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px">
-									<input type="text" placeholder="Time..." ng-model="time" ng-show="addEducationForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Time..." ng-model="educationtime" ng-show="addEducationForm.$visible">
 								</div>
 								<div class="buttons">
 								      	<!-- buttons to submit / cancel form -->

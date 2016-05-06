@@ -495,8 +495,15 @@ li:hover .edit-button {
 .txt-skill {
 	visibility: hidden;
 	margin-top: 3px;
+	width: 22% !important;
 }
 
 #skills-container:hover .txt-skill {
 	visibility: visible;
+}
+
+.col-3 {
+	width: 30% !important;
+	margin: 0 5px 5px 0 !important;
+	float: left !important;
 }
