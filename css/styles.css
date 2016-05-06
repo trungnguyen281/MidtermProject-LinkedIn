@@ -89,6 +89,13 @@ body {
 	text-decoration: none;
 }
 
+.phonenumber {
+	color: #66696a;
+	font-size: 13px;
+	font-weight: normal;
+	line-height: 17px;
+}
+
 .overview {
 	margin: 10px 0;
 }
