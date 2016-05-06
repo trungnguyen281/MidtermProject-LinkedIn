@@ -94,15 +94,37 @@
 					<div class="header">
 						<span class="glyphicon glyphicon-envelope icon"></span>
 						<h3>Summary</h3>
-						<button class="btn btn-default edit-button" ng-click="textBtnForm.$show()" ng-hide="textBtnForm.$visible">Edit</button>
 					</div>
 					<div style="clear: both;"></div>		
 					<div class="content">
 						<div class="summary-content">
-							<span editable-textarea="summary.content" e-form="textBtnForm" e-rows="10" e-cols="75">
-								{{ summary.content || 'empty' }}
-							</span>
-						</div>	
+							<ul>
+								<li ng-repeat="detail in summary">
+									<span editable-textarea="detail.content" e-rows="5" e-cols="75">
+									{{ detail.content }}
+									</span>
+								</li>
+							</ul>
+						</div>
+						<form editable-form name="addSummaryForm" ng-submit="addSummary()">
+								<button type="button" class="btn btn-default" ng-click="addSummaryForm.$show()" ng-show="!addSummaryForm.$visible">
+								    Add
+								</button>
+								<div style="margin-bottom: 5px;">
+									<input class="editable-input form-control ng-pristine ng-valid" placeholder="Add your summary..." type="text" ng-model="summarydetail" ng-show="addSummaryForm.$visible">
+								</div>
+								<div class="buttons">
+								    <!-- buttons to submit / cancel form -->
+								    <span ng-show="addSummaryForm.$visible">
+									    <button type="submit" class="btn btn-primary" ng-disabled="addSummaryForm.$waiting" ng-click="addSummaryForm.$cancel()">
+									    Save
+									    </button>
+									    <button type="button" class="btn btn-default" ng-disabled="addSummaryForm.$waiting" ng-click="addSummaryForm.$cancel()">
+									    Cancel
+									    </button>
+								    </span>
+							    </div>
+							</form>	
 					</div>
 				</div>
 				<div id="experience-container" class="container">
@@ -151,20 +173,22 @@
 								    Add
 								</button>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Job's name/position..." ng-model="job" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Job's name/position..." ng-model="job" ng-show="addExperienceForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Company's name..." ng-model="companyname" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Company's name..." ng-model="companyname" ng-show="addExperienceForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Link company's logo..." ng-model="logocompany" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Link company's logo..." ng-model="logocompany" ng-show="addExperienceForm.$visible">
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Time..." ng-model="time" ng-show="addExperienceForm.$visible"> 
-									<input type="text" placeholder="Address..." ng-model="locate" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Time..." ng-model="time" ng-show="addExperienceForm.$visible"> 
 								</div>
 								<div style="margin-bottom: 5px;">
-									<input type="text" placeholder="Detail..." ng-model="detail" ng-show="addExperienceForm.$visible">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Address..." ng-model="locate" ng-show="addExperienceForm.$visible">
+								</div>
+								<div style="margin-bottom: 5px;">
+									<input class="editable-input form-control ng-pristine ng-valid" type="text" placeholder="Detail..." ng-model="detail" ng-show="addExperienceForm.$visible">
 								</div>
 								<div class="buttons">
 								    <!-- buttons to submit / cancel form -->
@@ -269,8 +293,8 @@
 							<h5>Top skills</h5>
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in topskills">
-									<div class="point"><a href="">{{skill.point}}</a></div>
-									<div class="skill-name"><a href="">{{skill.name}}</a></div>
+									<div editable-number="skill.point" class="point"><a href="">{{skill.point}}</a></div>
+									<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
 									<div class="hr-line">
 										<hr>
 									</div>
@@ -282,8 +306,8 @@
 							<dd class="list-top-skills">
 								<dl ng-repeat="skill in otherskills">
 									<div class="skill">
-										<div class="point"><a href="">{{skill.point || '0'}}</a></div>
-										<div class="skill-name"><a href="">{{skill.name || 'empty'}}</a></div>
+										<div editable-number="skill.point" class="point"><a href="">{{skill.point}}</a></div>
+										<div editable-text="skill.name" class="skill-name"><a href="">{{skill.name}}</a></div>
 									</div>
 								</dl>
 							</dd>
